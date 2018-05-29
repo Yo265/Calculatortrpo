@@ -66,3 +66,23 @@ double cosinus(double num){
 	result = cos(num);
 	return result;
 }
+
+double tg(double num){
+	double result,tmp;
+	if((num == 90) || (num == 270))
+		return 7878;
+	else{
+	tmp = (num * pi)/180;
+	result =tan(num);
+	return result;
+	}
+}
+
+double ctg(double num){
+	double result,tmp;
+		if((num == 0) || (num == 180) || (num == 360))
+		return 787890;
+	tmp = (num * pi)/180;
+	result = 1/tan(num);
+	return result;
+}
