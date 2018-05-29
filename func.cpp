@@ -30,3 +30,18 @@ double addition(double num1,double num2){
 	result = num1 + num2;
 	return result;
 }
+
+double factorial(double num){
+	double result = 1;
+	if (num < 0){
+		result = 0;
+		return result;
+	}else if (num == 0){
+		result = 1;
+		return result;
+	}else {
+		for (int i = 1;i <= num;i++)
+			result = i * result;
+		return result;
+	}
+}
