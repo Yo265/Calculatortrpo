@@ -45,3 +45,10 @@ double factorial(double num){
 		return result;
 	}
 }
+
+double percentage(double num1,double num2){
+	double result,tmp;
+	tmp = num1/100;
+	result = tmp * num2;
+	return result;
+}
