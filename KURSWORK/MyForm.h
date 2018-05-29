@@ -76,6 +76,7 @@ namespace KURSWORK {
 	private: System::Windows::Forms::Button^  button3;
 	private: System::Windows::Forms::Button^  button8;
 	private: System::Windows::Forms::Button^  button17;
+	private: System::Windows::Forms::Button^  button27;
 	protected:
 
 
@@ -122,6 +123,7 @@ namespace KURSWORK {
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->button8 = (gcnew System::Windows::Forms::Button());
 			this->button17 = (gcnew System::Windows::Forms::Button());
+			this->button27 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// maskedTextBox1
@@ -378,7 +380,7 @@ namespace KURSWORK {
 			// 
 			this->button23->Font = (gcnew System::Drawing::Font(L"Tahoma", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->button23->Location = System::Drawing::Point(370, 186);
+			this->button23->Location = System::Drawing::Point(548, 280);
 			this->button23->Name = L"button23";
 			this->button23->Size = System::Drawing::Size(83, 41);
 			this->button23->TabIndex = 34;
@@ -442,12 +444,25 @@ namespace KURSWORK {
 			this->button17->Text = L"log";
 			this->button17->UseVisualStyleBackColor = true;
 			// 
+			// button27
+			// 
+			this->button27->Font = (gcnew System::Drawing::Font(L"Tahoma", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->button27->Location = System::Drawing::Point(370, 186);
+			this->button27->Name = L"button27";
+			this->button27->Size = System::Drawing::Size(83, 41);
+			this->button27->TabIndex = 40;
+			this->button27->Text = L"^e";
+			this->button27->UseVisualStyleBackColor = true;
+			this->button27->Click += gcnew System::EventHandler(this, &MyForm::button27_Click);
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::AppWorkspace;
 			this->ClientSize = System::Drawing::Size(697, 425);
+			this->Controls->Add(this->button27);
 			this->Controls->Add(this->button17);
 			this->Controls->Add(this->button8);
 			this->Controls->Add(this->button3);
@@ -522,6 +537,7 @@ namespace KURSWORK {
 		button3->Click += gcnew EventHandler(this, &MyForm::Operation1); 
 		button8->Click += gcnew EventHandler(this, &MyForm::Operation1);
 		button4->Click += gcnew EventHandler(this, &MyForm::Operation1);
+		button27->Click += gcnew EventHandler(this, &MyForm::Operation1);
 		//Отдельный "IsEqual"
 		button16->Click += gcnew EventHandler(this, &MyForm::IsEqual);
 		//Отдельный "ClearMe"
@@ -561,6 +577,7 @@ private: System::Void Operation(System::Object^ sender, System::EventArgs^  e) {
 		if (Znak == "!")   Result = factorial(Number1);
 		if (Znak == "sqrt")Result = square_root(Number1);
 		if (Znak == "log")Result = lg(Number1);
+		if (Znak == "^e") Result = epow(Number1);
 		Znak = nullptr;
 		// Отображаем Result в текстовом поле:
 		maskedTextBox1->Text = Result.ToString();
@@ -646,6 +663,8 @@ private: System::Void button17_Click(System::Object^  sender, System::EventArgs^
 private: System::Void button3_Click_1(System::Object^  sender, System::EventArgs^  e) {
 }
 private: System::Void button24_Click_1(System::Object^  sender, System::EventArgs^  e) {
+}
+private: System::Void button27_Click(System::Object^  sender, System::EventArgs^  e) {
 }
 };
 }
