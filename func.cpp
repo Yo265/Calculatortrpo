@@ -86,3 +86,69 @@ double ctg(double num){
 	result = 1/tan(num);
 	return result;
 }
+
+double power(double num1,double num2){
+	double result = num1;
+	if (num2 == 0){
+		result = 0;
+		return result;
+	}else if(num2 == 1){
+		result = num1;
+		return result;
+	}else if(num2 == -1){
+		result = 1/num1;
+		return result;
+	}else if(num2 >= 2){
+		for(int i = 2;i <= num2;i++)
+			result *= num1;
+		return result;
+	}else if(num2 <= -2){
+		double n = num2;
+		n *= -1;
+		for(int i = 2;i <= n;i++)
+			result *= num1;
+		result = 1/result;
+		return result;
+	}
+}
+
+double square_root(double num1){
+	double result;
+	result = sqrt(num1);
+	return result;
+}
+
+double epow(double num){
+	double result = e;
+	if (num == 0){
+		result = 0;
+		return result;
+	}else if(num == 1){
+		result = e;
+		return result;
+	}else if(num == -1){
+		result = 1/num;
+		return result;
+	}else if(num >= 2){
+		for(int i = 2;i <= num;i++)
+			result *= num;
+		return result;
+	}else if(num <= -2){
+		double n = num;
+		n *= -1;
+		for(int i = 2;i <= n;i++)
+			result *= num;
+		result = 1/result;
+		return result;
+	}
+}
+
+double lg(double num){
+	double result;
+	if(num <= 0)
+		return 1333;
+	else{
+		result = log(num);
+		return result;
+	}
+}
