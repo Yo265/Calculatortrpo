@@ -13,4 +13,4 @@ double cosinus(double num);
 double tg(double num);
 double ctg(double num);
 double lg(double num);
-double epow(num);
+double epow(double num);
