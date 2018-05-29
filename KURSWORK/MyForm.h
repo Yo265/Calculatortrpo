@@ -69,6 +69,12 @@ namespace KURSWORK {
 
 
 	private: System::Windows::Forms::Button^  button25;
+	private: System::Windows::Forms::Button^  button22;
+	private: System::Windows::Forms::Button^  button23;
+	private: System::Windows::Forms::Button^  button24;
+	private: System::Windows::Forms::Button^  button26;
+	private: System::Windows::Forms::Button^  button3;
+	private: System::Windows::Forms::Button^  button8;
 	protected:
 
 
@@ -108,6 +114,12 @@ namespace KURSWORK {
 			this->button21 = (gcnew System::Windows::Forms::Button());
 			this->button16 = (gcnew System::Windows::Forms::Button());
 			this->button25 = (gcnew System::Windows::Forms::Button());
+			this->button22 = (gcnew System::Windows::Forms::Button());
+			this->button23 = (gcnew System::Windows::Forms::Button());
+			this->button24 = (gcnew System::Windows::Forms::Button());
+			this->button26 = (gcnew System::Windows::Forms::Button());
+			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->button8 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// maskedTextBox1
@@ -148,7 +160,7 @@ namespace KURSWORK {
 			// 
 			this->button4->Font = (gcnew System::Drawing::Font(L"Tahoma", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->button4->Location = System::Drawing::Point(459, 142);
+			this->button4->Location = System::Drawing::Point(548, 186);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(83, 41);
 			this->button4->TabIndex = 4;
@@ -160,7 +172,7 @@ namespace KURSWORK {
 			// 
 			this->button5->Font = (gcnew System::Drawing::Font(L"Tahoma", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->button5->Location = System::Drawing::Point(548, 142);
+			this->button5->Location = System::Drawing::Point(370, 95);
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(83, 41);
 			this->button5->TabIndex = 7;
@@ -172,7 +184,7 @@ namespace KURSWORK {
 			// 
 			this->button6->Font = (gcnew System::Drawing::Font(L"Tahoma", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->button6->Location = System::Drawing::Point(548, 189);
+			this->button6->Location = System::Drawing::Point(459, 142);
 			this->button6->Name = L"button6";
 			this->button6->Size = System::Drawing::Size(83, 41);
 			this->button6->TabIndex = 6;
@@ -341,7 +353,7 @@ namespace KURSWORK {
 			// 
 			this->button25->Font = (gcnew System::Drawing::Font(L"Tahoma", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->button25->Location = System::Drawing::Point(459, 189);
+			this->button25->Location = System::Drawing::Point(370, 142);
 			this->button25->Name = L"button25";
 			this->button25->Size = System::Drawing::Size(83, 41);
 			this->button25->TabIndex = 29;
@@ -349,12 +361,85 @@ namespace KURSWORK {
 			this->button25->UseVisualStyleBackColor = true;
 			this->button25->Click += gcnew System::EventHandler(this, &MyForm::button25_Click);
 			// 
+			// button22
+			// 
+			this->button22->Font = (gcnew System::Drawing::Font(L"Tahoma", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->button22->Location = System::Drawing::Point(459, 186);
+			this->button22->Name = L"button22";
+			this->button22->Size = System::Drawing::Size(83, 41);
+			this->button22->TabIndex = 33;
+			this->button22->Text = L"!";
+			this->button22->UseVisualStyleBackColor = true;
+			// 
+			// button23
+			// 
+			this->button23->Font = (gcnew System::Drawing::Font(L"Tahoma", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->button23->Location = System::Drawing::Point(370, 186);
+			this->button23->Name = L"button23";
+			this->button23->Size = System::Drawing::Size(83, 41);
+			this->button23->TabIndex = 34;
+			this->button23->Text = L"cos";
+			this->button23->UseVisualStyleBackColor = true;
+			// 
+			// button24
+			// 
+			this->button24->Font = (gcnew System::Drawing::Font(L"Tahoma", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->button24->Location = System::Drawing::Point(548, 142);
+			this->button24->Name = L"button24";
+			this->button24->Size = System::Drawing::Size(83, 41);
+			this->button24->TabIndex = 35;
+			this->button24->Text = L"%";
+			this->button24->UseVisualStyleBackColor = true;
+			// 
+			// button26
+			// 
+			this->button26->Font = (gcnew System::Drawing::Font(L"Tahoma", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->button26->Location = System::Drawing::Point(370, 233);
+			this->button26->Name = L"button26";
+			this->button26->Size = System::Drawing::Size(83, 41);
+			this->button26->TabIndex = 36;
+			this->button26->Text = L"ctan";
+			this->button26->UseVisualStyleBackColor = true;
+			// 
+			// button3
+			// 
+			this->button3->Font = (gcnew System::Drawing::Font(L"Tahoma", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->button3->Location = System::Drawing::Point(548, 233);
+			this->button3->Name = L"button3";
+			this->button3->Size = System::Drawing::Size(83, 41);
+			this->button3->TabIndex = 37;
+			this->button3->Text = L"tan";
+			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &MyForm::button3_Click_1);
+			// 
+			// button8
+			// 
+			this->button8->Font = (gcnew System::Drawing::Font(L"Tahoma", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->button8->Location = System::Drawing::Point(459, 233);
+			this->button8->Name = L"button8";
+			this->button8->Size = System::Drawing::Size(83, 41);
+			this->button8->TabIndex = 38;
+			this->button8->Text = L"sin";
+			this->button8->UseVisualStyleBackColor = true;
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::AppWorkspace;
 			this->ClientSize = System::Drawing::Size(697, 425);
+			this->Controls->Add(this->button8);
+			this->Controls->Add(this->button3);
+			this->Controls->Add(this->button26);
+			this->Controls->Add(this->button24);
+			this->Controls->Add(this->button23);
+			this->Controls->Add(this->button22);
 			this->Controls->Add(this->button25);
 			this->Controls->Add(this->button16);
 			this->Controls->Add(this->button20);
@@ -413,6 +498,11 @@ namespace KURSWORK {
 		button5->Click += gcnew EventHandler(this, &MyForm::Operation);
 		button6->Click += gcnew EventHandler(this, &MyForm::Operation);
 		button25->Click += gcnew EventHandler(this, &MyForm::Operation);
+		button23->Click += gcnew EventHandler(this, &MyForm::Operation);
+		button26->Click += gcnew EventHandler(this, &MyForm::Operation);
+		button22->Click += gcnew EventHandler(this, &MyForm::Operation);
+		button3->Click += gcnew EventHandler(this, &MyForm::Operation); 
+		button8->Click += gcnew EventHandler(this, &MyForm::Operation);
 		//־עהוכüםûי "IsEqual"
 		button16->Click += gcnew EventHandler(this, &MyForm::IsEqual);
 		//־עהוכüםûי "ClearMe"
@@ -511,6 +601,8 @@ private: System::Void button25_Click(System::Object^  sender, System::EventArgs^
 }
 private: System::Void button17_Click(System::Object^  sender, System::EventArgs^  e) {
 }
-
+\
+private: System::Void button3_Click_1(System::Object^  sender, System::EventArgs^  e) {
+}
 };
 }
