@@ -44,12 +44,12 @@ namespace KURSWORK {
 	private: System::Windows::Forms::MaskedTextBox^  maskedTextBox1;
 	private: System::Windows::Forms::Button^  button1;
 	private: System::Windows::Forms::Button^  button2;
-	private: System::Windows::Forms::Button^  button3;
+
 	private: System::Windows::Forms::Button^  button4;
 	private: System::Windows::Forms::Button^  button5;
 	private: System::Windows::Forms::Button^  button6;
 	private: System::Windows::Forms::Button^  button7;
-	private: System::Windows::Forms::Button^  button8;
+
 	private: System::Windows::Forms::Button^  button9;
 	private: System::Windows::Forms::Button^  button10;
 	private: System::Windows::Forms::Button^  button11;
@@ -66,8 +66,8 @@ namespace KURSWORK {
 	private: System::Windows::Forms::Button^  button16;
 
 
-	private: System::Windows::Forms::Button^  button17;
-	private: System::Windows::Forms::Button^  button24;
+
+
 	private: System::Windows::Forms::Button^  button25;
 	protected:
 
@@ -91,12 +91,10 @@ namespace KURSWORK {
 			this->maskedTextBox1 = (gcnew System::Windows::Forms::MaskedTextBox());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->button5 = (gcnew System::Windows::Forms::Button());
 			this->button6 = (gcnew System::Windows::Forms::Button());
 			this->button7 = (gcnew System::Windows::Forms::Button());
-			this->button8 = (gcnew System::Windows::Forms::Button());
 			this->button9 = (gcnew System::Windows::Forms::Button());
 			this->button10 = (gcnew System::Windows::Forms::Button());
 			this->button11 = (gcnew System::Windows::Forms::Button());
@@ -109,8 +107,6 @@ namespace KURSWORK {
 			this->button20 = (gcnew System::Windows::Forms::Button());
 			this->button21 = (gcnew System::Windows::Forms::Button());
 			this->button16 = (gcnew System::Windows::Forms::Button());
-			this->button17 = (gcnew System::Windows::Forms::Button());
-			this->button24 = (gcnew System::Windows::Forms::Button());
 			this->button25 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
@@ -128,7 +124,7 @@ namespace KURSWORK {
 			// 
 			this->button1->Font = (gcnew System::Drawing::Font(L"Tahoma", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->button1->Location = System::Drawing::Point(548, 142);
+			this->button1->Location = System::Drawing::Point(548, 95);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(83, 41);
 			this->button1->TabIndex = 2;
@@ -140,7 +136,7 @@ namespace KURSWORK {
 			// 
 			this->button2->Font = (gcnew System::Drawing::Font(L"Tahoma", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->button2->Location = System::Drawing::Point(459, 142);
+			this->button2->Location = System::Drawing::Point(459, 95);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(83, 41);
 			this->button2->TabIndex = 3;
@@ -148,23 +144,11 @@ namespace KURSWORK {
 			this->button2->UseVisualStyleBackColor = true;
 			this->button2->Click += gcnew System::EventHandler(this, &MyForm::button2_Click);
 			// 
-			// button3
-			// 
-			this->button3->Font = (gcnew System::Drawing::Font(L"Tahoma", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->button3->Location = System::Drawing::Point(459, 95);
-			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(83, 41);
-			this->button3->TabIndex = 5;
-			this->button3->Text = L"(";
-			this->button3->UseVisualStyleBackColor = true;
-			this->button3->Click += gcnew System::EventHandler(this, &MyForm::button3_Click);
-			// 
 			// button4
 			// 
 			this->button4->Font = (gcnew System::Drawing::Font(L"Tahoma", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->button4->Location = System::Drawing::Point(459, 189);
+			this->button4->Location = System::Drawing::Point(459, 142);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(83, 41);
 			this->button4->TabIndex = 4;
@@ -176,7 +160,7 @@ namespace KURSWORK {
 			// 
 			this->button5->Font = (gcnew System::Drawing::Font(L"Tahoma", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->button5->Location = System::Drawing::Point(548, 189);
+			this->button5->Location = System::Drawing::Point(548, 142);
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(83, 41);
 			this->button5->TabIndex = 7;
@@ -188,7 +172,7 @@ namespace KURSWORK {
 			// 
 			this->button6->Font = (gcnew System::Drawing::Font(L"Tahoma", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->button6->Location = System::Drawing::Point(548, 236);
+			this->button6->Location = System::Drawing::Point(548, 189);
 			this->button6->Name = L"button6";
 			this->button6->Size = System::Drawing::Size(83, 41);
 			this->button6->TabIndex = 6;
@@ -207,18 +191,6 @@ namespace KURSWORK {
 			this->button7->Text = L".";
 			this->button7->UseVisualStyleBackColor = true;
 			this->button7->Click += gcnew System::EventHandler(this, &MyForm::button7_Click);
-			// 
-			// button8
-			// 
-			this->button8->Font = (gcnew System::Drawing::Font(L"Tahoma", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->button8->Location = System::Drawing::Point(548, 95);
-			this->button8->Name = L"button8";
-			this->button8->Size = System::Drawing::Size(83, 41);
-			this->button8->TabIndex = 8;
-			this->button8->Text = L")";
-			this->button8->UseVisualStyleBackColor = true;
-			this->button8->Click += gcnew System::EventHandler(this, &MyForm::button8_Click);
 			// 
 			// button9
 			// 
@@ -365,35 +337,11 @@ namespace KURSWORK {
 			this->button16->UseVisualStyleBackColor = true;
 			this->button16->Click += gcnew System::EventHandler(this, &MyForm::button16_Click);
 			// 
-			// button17
-			// 
-			this->button17->Font = (gcnew System::Drawing::Font(L"Tahoma", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->button17->Location = System::Drawing::Point(459, 283);
-			this->button17->Name = L"button17";
-			this->button17->Size = System::Drawing::Size(83, 41);
-			this->button17->TabIndex = 27;
-			this->button17->Text = L"pi";
-			this->button17->UseVisualStyleBackColor = true;
-			this->button17->Click += gcnew System::EventHandler(this, &MyForm::button17_Click);
-			// 
-			// button24
-			// 
-			this->button24->Font = (gcnew System::Drawing::Font(L"Tahoma", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->button24->Location = System::Drawing::Point(459, 236);
-			this->button24->Name = L"button24";
-			this->button24->Size = System::Drawing::Size(83, 41);
-			this->button24->TabIndex = 28;
-			this->button24->Text = L"e";
-			this->button24->UseVisualStyleBackColor = true;
-			this->button24->Click += gcnew System::EventHandler(this, &MyForm::button24_Click);
-			// 
 			// button25
 			// 
 			this->button25->Font = (gcnew System::Drawing::Font(L"Tahoma", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->button25->Location = System::Drawing::Point(548, 283);
+			this->button25->Location = System::Drawing::Point(459, 189);
 			this->button25->Name = L"button25";
 			this->button25->Size = System::Drawing::Size(83, 41);
 			this->button25->TabIndex = 29;
@@ -408,8 +356,6 @@ namespace KURSWORK {
 			this->BackColor = System::Drawing::SystemColors::AppWorkspace;
 			this->ClientSize = System::Drawing::Size(697, 425);
 			this->Controls->Add(this->button25);
-			this->Controls->Add(this->button24);
-			this->Controls->Add(this->button17);
 			this->Controls->Add(this->button16);
 			this->Controls->Add(this->button20);
 			this->Controls->Add(this->button21);
@@ -423,10 +369,8 @@ namespace KURSWORK {
 			this->Controls->Add(this->button10);
 			this->Controls->Add(this->button9);
 			this->Controls->Add(this->button7);
-			this->Controls->Add(this->button8);
 			this->Controls->Add(this->button5);
 			this->Controls->Add(this->button6);
-			this->Controls->Add(this->button3);
 			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
@@ -443,93 +387,130 @@ namespace KURSWORK {
 
 		}
 #pragma endregion
+		// Внешние переменные, видимые из всех методов класса MyForm:
+		String^ Znak;      // знак арифметической операции
+		bool StartOfInput; // ожидание ввода 
+		double Number1, Number2; // Первый и второй операнды расчёта
 	private: System::Void MyForm_Load(System::Object^  sender, System::EventArgs^  e) {
+		StartOfInput = true;
+		Znak = nullptr;
+		//один обработчик для кнопок с цифрами
+		button10->Click += gcnew EventHandler(this, &MyForm::AddDigit);
+		button18->Click += gcnew EventHandler(this, &MyForm::AddDigit);
+		button15->Click += gcnew EventHandler(this, &MyForm::AddDigit);
+		button19->Click += gcnew EventHandler(this, &MyForm::AddDigit);
+		button12->Click += gcnew EventHandler(this, &MyForm::AddDigit);
+		button21->Click += gcnew EventHandler(this, &MyForm::AddDigit);
+		button14->Click += gcnew EventHandler(this, &MyForm::AddDigit);
+		button13->Click += gcnew EventHandler(this, &MyForm::AddDigit);
+		button20->Click += gcnew EventHandler(this, &MyForm::AddDigit);
+		button7->Click += gcnew EventHandler(this, &MyForm::AddDigit);
+		button11->Click += gcnew EventHandler(this, &MyForm::AddDigit);
+		//для операций
+		button1->Click += gcnew EventHandler(this, &MyForm::Operation);
+		button2->Click += gcnew EventHandler(this, &MyForm::Operation);
+		button4->Click += gcnew EventHandler(this, &MyForm::Operation);
+		button5->Click += gcnew EventHandler(this, &MyForm::Operation);
+		button6->Click += gcnew EventHandler(this, &MyForm::Operation);
+		button25->Click += gcnew EventHandler(this, &MyForm::Operation);
+		//Отдельный "IsEqual"
+		button16->Click += gcnew EventHandler(this, &MyForm::IsEqual);
+		//Отдельный "ClearMe"
+		button9->Click += gcnew EventHandler(this, &MyForm::ClearMe);
 	}
+
+private: System::Void AddDigit(System::Object^ sender, System::EventArgs^ e) {
+			 // Получить текст, отображаемый на кнопке
+			 Button^ MyButton = (Button^)sender;
+			 String^ Digit = MyButton->Text;
+			 if (StartOfInput == true) {  // Ввод первой цифры числа:
+				 maskedTextBox1->Text = Digit;
+				 StartOfInput = false;
+				 return;
+			 }
+			 // Иначе "сцепляем" полученные цифры в новое число:
+			 if (StartOfInput == false)  maskedTextBox1->Text = maskedTextBox1->Text + Digit;
+		 }
+private: System::Void Operation(System::Object^ sender, System::EventArgs^  e) {
+			Number1 = Double::Parse(maskedTextBox1->Text);
+			// Получить текст, отображаемый на кнопке можно таким образом:
+			Button^ MyButton = (Button^)sender;
+			Znak = MyButton->Text;
+			StartOfInput = true; // ожидаем ввод нового числа
+		}
 
 	private: System::Void maskedTextBox1_MaskInputRejected(System::Object^  sender, System::Windows::Forms::MaskInputRejectedEventArgs^  e) {
 	}
-private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
-	maskedTextBox1->Text = maskedTextBox1->Text + "+";
-}
-private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
-	maskedTextBox1->Text = maskedTextBox1->Text + "-";
-}
-private: System::Void button8_Click(System::Object^  sender, System::EventArgs^  e) {
-	maskedTextBox1->Text = maskedTextBox1->Text + ")";
+
+		 private: System::Void IsEqual(System::Object^ sender, System::EventArgs^ e) {
+			 // Обработка нажатия клавиши "IsEqual"
+			 double Result = 0;
+			 Number2 = Double::Parse(maskedTextBox1->Text);
+			 if (Znak == "+") Result = Number1 + Number2;
+			 if (Znak == "-") Result = Number1 - Number2;
+			 if (Znak == "*") Result = Number1 * Number2;
+			 if (Znak == "/") Result = Number1 / Number2;
+			 Znak = nullptr;
+			 // Отображаем Result в текстовом поле:
+			 maskedTextBox1->Text = Result.ToString();
+			 Number1 = Result; StartOfInput = true;
+		 }
+
+private: System::Void ClearMe(System::Object^ sender, System::EventArgs^ e) {
+	maskedTextBox1->Text = "0";
+	Znak = nullptr;
+	StartOfInput = true;
 }
 private: System::Void button9_Click(System::Object^  sender, System::EventArgs^  e) {
-	maskedTextBox1->Text = "";
 }
 private: System::Void button5_Click(System::Object^  sender, System::EventArgs^  e) {
-	maskedTextBox1->Text = maskedTextBox1->Text + "/";
 }
 private: System::Void button6_Click(System::Object^  sender, System::EventArgs^  e) {
-	maskedTextBox1->Text = maskedTextBox1->Text + "*";
 }
 private: System::Void button4_Click(System::Object^  sender, System::EventArgs^  e) {
-	maskedTextBox1->Text = maskedTextBox1->Text + "sqrt(";
 }
 private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e) {
-	maskedTextBox1->Text = maskedTextBox1->Text + "(";
 }
 private: System::Void button7_Click(System::Object^  sender, System::EventArgs^  e) {
-	maskedTextBox1->Text = maskedTextBox1->Text + ".";
 }
 private: System::Void button10_Click(System::Object^  sender, System::EventArgs^  e) {
-	maskedTextBox1->Text = maskedTextBox1->Text + "1";
 }
 private: System::Void button21_Click(System::Object^  sender, System::EventArgs^  e) {
-	maskedTextBox1->Text = maskedTextBox1->Text + "7";
 }
 private: System::Void button20_Click(System::Object^  sender, System::EventArgs^  e) {
-	maskedTextBox1->Text = maskedTextBox1->Text + "0";
 }
 private: System::Void button15_Click(System::Object^  sender, System::EventArgs^  e) {
-	maskedTextBox1->Text = maskedTextBox1->Text + "2";
 }
 private: System::Void button18_Click(System::Object^  sender, System::EventArgs^  e) {
-	maskedTextBox1->Text = maskedTextBox1->Text + "3";
 }
 private: System::Void button11_Click(System::Object^  sender, System::EventArgs^  e) {
-	maskedTextBox1->Text = maskedTextBox1->Text + "4";
 }
 private: System::Void button19_Click(System::Object^  sender, System::EventArgs^  e) {
-	maskedTextBox1->Text = maskedTextBox1->Text + "5";
 }
 private: System::Void button12_Click(System::Object^  sender, System::EventArgs^  e) {
-	maskedTextBox1->Text = maskedTextBox1->Text + "6";
 }
 private: System::Void button14_Click(System::Object^  sender, System::EventArgs^  e) {
-	maskedTextBox1->Text = maskedTextBox1->Text + "8";
 }
 private: System::Void button13_Click(System::Object^  sender, System::EventArgs^  e) {
-	maskedTextBox1->Text = maskedTextBox1->Text + "9";
 }
 private: System::Void button23_Click(System::Object^  sender, System::EventArgs^  e) {
-	maskedTextBox1->Text = maskedTextBox1->Text + "sin(";
 }
 private: System::Void button22_Click(System::Object^  sender, System::EventArgs^  e) {
-	maskedTextBox1->Text = maskedTextBox1->Text + "cos(";
 }
-		 
+private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+}
+private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
+}
+private: System::Void button8_Click(System::Object^  sender, System::EventArgs^  e) {
+}
 private: System::Void button16_Click(System::Object^  sender, System::EventArgs^  e) {
-	FILE *Global;
-	String ^cs;
-	cs = maskedTextBox1->Text;
-	Global = fopen("file1.dat", "w");
-	maskedTextBox1->Text = "";
-//	system("CLS");
-	fwrite(&cs, sizeof(cs),1, Global);
-  //  fclose(Global);
 }
 private: System::Void button24_Click(System::Object^  sender, System::EventArgs^  e) {
-	maskedTextBox1->Text = maskedTextBox1->Text + "e";
 }
 private: System::Void button25_Click(System::Object^  sender, System::EventArgs^  e) {
-	maskedTextBox1->Text = maskedTextBox1->Text + "pow(";
 }
 private: System::Void button17_Click(System::Object^  sender, System::EventArgs^  e) {
-	maskedTextBox1->Text = maskedTextBox1->Text + "pi";
 }
+
 };
 }
