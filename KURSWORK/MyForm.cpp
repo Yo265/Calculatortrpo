@@ -1,5 +1,5 @@
 ﻿#include "MyForm.h"
-
+#include "func.h"
 using namespace System;
 using namespace System::Windows::Forms;
 [STAThread]

@@ -1,7 +1,7 @@
 #pragma once
-#include "global.h"
 #include <stdio.h>
 //#include <cstdio.h>
+#include "func.h"
 #include <conio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -75,6 +75,7 @@ namespace KURSWORK {
 	private: System::Windows::Forms::Button^  button26;
 	private: System::Windows::Forms::Button^  button3;
 	private: System::Windows::Forms::Button^  button8;
+	private: System::Windows::Forms::Button^  button17;
 	protected:
 
 
@@ -120,6 +121,7 @@ namespace KURSWORK {
 			this->button26 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->button8 = (gcnew System::Windows::Forms::Button());
+			this->button17 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// maskedTextBox1
@@ -200,7 +202,7 @@ namespace KURSWORK {
 			this->button7->Name = L"button7";
 			this->button7->Size = System::Drawing::Size(83, 41);
 			this->button7->TabIndex = 9;
-			this->button7->Text = L".";
+			this->button7->Text = L",";
 			this->button7->UseVisualStyleBackColor = true;
 			this->button7->Click += gcnew System::EventHandler(this, &MyForm::button7_Click);
 			// 
@@ -393,6 +395,7 @@ namespace KURSWORK {
 			this->button24->TabIndex = 35;
 			this->button24->Text = L"%";
 			this->button24->UseVisualStyleBackColor = true;
+			this->button24->Click += gcnew System::EventHandler(this, &MyForm::button24_Click_1);
 			// 
 			// button26
 			// 
@@ -428,12 +431,24 @@ namespace KURSWORK {
 			this->button8->Text = L"sin";
 			this->button8->UseVisualStyleBackColor = true;
 			// 
+			// button17
+			// 
+			this->button17->Font = (gcnew System::Drawing::Font(L"Tahoma", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->button17->Location = System::Drawing::Point(459, 280);
+			this->button17->Name = L"button17";
+			this->button17->Size = System::Drawing::Size(83, 41);
+			this->button17->TabIndex = 39;
+			this->button17->Text = L"log";
+			this->button17->UseVisualStyleBackColor = true;
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::AppWorkspace;
 			this->ClientSize = System::Drawing::Size(697, 425);
+			this->Controls->Add(this->button17);
 			this->Controls->Add(this->button8);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->button26);
@@ -491,18 +506,22 @@ namespace KURSWORK {
 		button20->Click += gcnew EventHandler(this, &MyForm::AddDigit);
 		button7->Click += gcnew EventHandler(this, &MyForm::AddDigit);
 		button11->Click += gcnew EventHandler(this, &MyForm::AddDigit);
-		//для операций
+		//Для операций с 2 операндами
 		button1->Click += gcnew EventHandler(this, &MyForm::Operation);
 		button2->Click += gcnew EventHandler(this, &MyForm::Operation);
-		button4->Click += gcnew EventHandler(this, &MyForm::Operation);
 		button5->Click += gcnew EventHandler(this, &MyForm::Operation);
 		button6->Click += gcnew EventHandler(this, &MyForm::Operation);
 		button25->Click += gcnew EventHandler(this, &MyForm::Operation);
-		button23->Click += gcnew EventHandler(this, &MyForm::Operation);
-		button26->Click += gcnew EventHandler(this, &MyForm::Operation);
-		button22->Click += gcnew EventHandler(this, &MyForm::Operation);
-		button3->Click += gcnew EventHandler(this, &MyForm::Operation); 
-		button8->Click += gcnew EventHandler(this, &MyForm::Operation);
+		button24->Click += gcnew EventHandler(this, &MyForm::Operation);
+		
+		//Для операций с 1 операндом
+		button23->Click += gcnew EventHandler(this, &MyForm::Operation1);
+		button17->Click += gcnew EventHandler(this, &MyForm::Operation1);
+		button26->Click += gcnew EventHandler(this, &MyForm::Operation1);
+		button22->Click += gcnew EventHandler(this, &MyForm::Operation1);
+		button3->Click += gcnew EventHandler(this, &MyForm::Operation1); 
+		button8->Click += gcnew EventHandler(this, &MyForm::Operation1);
+		button4->Click += gcnew EventHandler(this, &MyForm::Operation1);
 		//Отдельный "IsEqual"
 		button16->Click += gcnew EventHandler(this, &MyForm::IsEqual);
 		//Отдельный "ClearMe"
@@ -529,6 +548,25 @@ private: System::Void Operation(System::Object^ sender, System::EventArgs^  e) {
 			StartOfInput = true; // ожидаем ввод нового числа
 		}
 
+	private: System::Void Operation1(System::Object^ sender, System::EventArgs^  e) {
+		Number1 = Double::Parse(maskedTextBox1->Text);
+		// Получить текст, отображаемый на кнопке можно таким образом:
+		Button^ MyButton = (Button^)sender;
+		Znak = MyButton->Text;
+		double Result = 0;
+		if (Znak == "sin") Result=sinus(Number1);
+		if (Znak == "cos") Result = cosinus(Number1);
+		if (Znak == "tan") Result = tg(Number1);
+		if (Znak == "ctan")Result = ctg(Number1);
+		if (Znak == "!")   Result = factorial(Number1);
+		if (Znak == "sqrt")Result = square_root(Number1);
+		if (Znak == "log")Result = lg(Number1);
+		Znak = nullptr;
+		// Отображаем Result в текстовом поле:
+		maskedTextBox1->Text = Result.ToString();
+		Number1 = Result; StartOfInput = true;
+	}
+
 	private: System::Void maskedTextBox1_MaskInputRejected(System::Object^  sender, System::Windows::Forms::MaskInputRejectedEventArgs^  e) {
 	}
 
@@ -536,10 +574,12 @@ private: System::Void Operation(System::Object^ sender, System::EventArgs^  e) {
 			 // Обработка нажатия клавиши "IsEqual"
 			 double Result = 0;
 			 Number2 = Double::Parse(maskedTextBox1->Text);
-			 if (Znak == "+") Result = Number1 + Number2;
-			 if (Znak == "-") Result = Number1 - Number2;
-			 if (Znak == "*") Result = Number1 * Number2;
-			 if (Znak == "/") Result = Number1 / Number2;
+			 if (Znak == "+") Result = addition(Number1, Number2);
+			 if (Znak == "-") Result = subtraction(Number1, Number2);
+			 if (Znak == "*") Result = multipl(Number1, Number2);
+			 if (Znak == "/") Result = division(Number1, Number2);
+			 if (Znak == "^") Result = power(Number1, Number2);
+			 if (Znak == "%") Result = percentage(Number1, Number2);
 			 Znak = nullptr;
 			 // Отображаем Result в текстовом поле:
 			 maskedTextBox1->Text = Result.ToString();
@@ -562,6 +602,7 @@ private: System::Void button4_Click(System::Object^  sender, System::EventArgs^ 
 private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e) {
 }
 private: System::Void button7_Click(System::Object^  sender, System::EventArgs^  e) {
+	maskedTextBox1->Text = maskedTextBox1->Text + ",";
 }
 private: System::Void button10_Click(System::Object^  sender, System::EventArgs^  e) {
 }
@@ -603,6 +644,8 @@ private: System::Void button17_Click(System::Object^  sender, System::EventArgs^
 }
 \
 private: System::Void button3_Click_1(System::Object^  sender, System::EventArgs^  e) {
+}
+private: System::Void button24_Click_1(System::Object^  sender, System::EventArgs^  e) {
 }
 };
 }
