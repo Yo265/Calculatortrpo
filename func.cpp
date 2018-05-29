@@ -52,3 +52,17 @@ double percentage(double num1,double num2){
 	result = tmp * num2;
 	return result;
 }
+
+double sinus(double num){
+	double result,tmp;
+	tmp = (num * pi)/180;
+	result = sin(num);
+	return result;
+}
+
+double cosinus(double num){
+	double result,tmp;
+	tmp = (num * pi)/180;
+	result = cos(num);
+	return result;
+}
