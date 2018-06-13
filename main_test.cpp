@@ -87,6 +87,36 @@ TEST(Addition, test3) {
     ASSERT_DOUBLE_EQ(expected, result);
 }
 
+TEST(Factorial, test1) {
+    double result = factorial(0);
+    double expected = 1;
+    ASSERT_EQ(expected, result);
+}
+
+TEST(Factorial, test2) {
+    double result = factorial(6);
+    double expected = 720;
+    ASSERT_EQ(expected, result);
+}
+
+TEST(Factorial, test3) {
+    double result = factorial(5.5);
+    double expected = 287.885278;
+    ASSERT_DOUBLE_EQ(expected, result);
+}
+
+TEST(Percentage, test1) {
+    double result = percentage(120,13);
+    double expected = 15.6;
+    ASSERT_DOUBLE_EQ(expected, result);
+}
+
+TEST(Percentage, test2) {
+    double result = percentage(-150,10);
+    double expected = -15;
+    ASSERT_DOUBLE_EQ(expected, result);
+}
+
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
