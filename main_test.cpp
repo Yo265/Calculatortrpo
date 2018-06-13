@@ -117,6 +117,72 @@ TEST(Percentage, test2) {
     ASSERT_DOUBLE_EQ(expected, result);
 }
 
+TEST(Sinus, test1) {
+    double result = sinus(90);
+    double expected = 1;
+    ASSERT_DOUBLE_EQ(expected, result);
+}
+
+TEST(Sinus, test2) {
+    double result = sinus(315);
+    double expected = -0.707107;
+    ASSERT_DOUBLE_EQ(expected, result);
+}
+
+TEST(Sinus, test3) {
+    double result = sinus(-610);
+    double expected = 0.939693;
+    ASSERT_DOUBLE_EQ(expected, result);
+}
+
+TEST(Cosinus, test1) {
+    double result = cosinus(60);
+    double expected = 0.5;
+    ASSERT_DOUBLE_EQ(expected, result);
+}
+
+TEST(Cosinus, test2) {
+    double result = cosinus(410);
+    double expected = 0.642788;
+    ASSERT_DOUBLE_EQ(expected, result);
+}
+
+TEST(Cosinus, test3) {
+    double result = cosinus(-55);
+    double expected = 0.573576;
+    ASSERT_DOUBLE_EQ(expected, result);
+}
+
+TEST(Tg, test1) {
+    double result = tg(13);
+    double expected = 0.230868;
+    ASSERT_DOUBLE_EQ(expected, result);
+}
+
+TEST(Tg, test2) {
+    double result = tg(0);
+    double expected = 0;
+    ASSERT_DOUBLE_EQ(expected, result);
+}
+
+TEST(Tg, test3) {
+    double result = tg(-33);
+    double expected = -0.649408;
+    ASSERT_DOUBLE_EQ(expected, result);
+}
+
+TEST(Ctg, test1) {
+    double result = ctg(80);
+    double expected = 0.176327;
+    ASSERT_DOUBLE_EQ(expected, result);
+}
+
+TEST(Ctg, test2) {
+    double result = ctg(-519);
+    double expected = 2,605089;
+    ASSERT_DOUBLE_EQ(expected, result);
+}
+
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
