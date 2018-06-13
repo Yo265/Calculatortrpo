@@ -237,6 +237,13 @@ TEST(Epow, test3) {
     ASSERT_DOUBLE_EQ(expected, result);
 }
 
+TEST(Epow, test4) {
+    double result = epow(5.1);
+    double expected = 164.021907;
+    ASSERT_DOUBLE_EQ(expected, result);
+}
+
+
 TEST(Lg, test1) {
     double result = lg(55);
     double expected = 1.740363;
