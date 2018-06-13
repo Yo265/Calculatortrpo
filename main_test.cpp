@@ -219,6 +219,36 @@ TEST(Square_root, test3) {
     ASSERT_DOUBLE_EQ(expected, result);
 }
 
+TEST(Epow, test1) {
+    double result = epow(0);
+    double expected = 1;
+    ASSERT_EQ(expected, result);
+}
+
+TEST(Epow, test2) {
+    double result = epow(-5);
+    double expected = 0.006738;
+    ASSERT_DOUBLE_EQ(expected, result);
+}
+
+TEST(Epow, test3) {
+    double result = epow(4);
+    double expected = 54.598150;
+    ASSERT_DOUBLE_EQ(expected, result);
+}
+
+TEST(Lg, test1) {
+    double result = lg(55);
+    double expected = 1.740363;
+    ASSERT_DOUBLE_EQ(expected, result);
+}
+
+TEST(Lg, test2) {
+    double result = lg(1);
+    double expected = 0;
+    ASSERT_DOUBLE_EQ(expected, result);
+}
+
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
