@@ -183,6 +183,42 @@ TEST(Ctg, test2) {
     ASSERT_DOUBLE_EQ(expected, result);
 }
 
+TEST(Power, test1) {
+    double result = power(11,3);
+    double expected = 1331;
+    ASSERT_EQ(expected, result);
+}
+
+TEST(Power, test2) {
+    double result = power(-13,4);
+    double expected = 28561;
+    ASSERT_EQ(expected, result);
+}
+
+TEST(Power, test3) {
+    double result = power(-5,-3);
+    double expected = -0.008;
+    ASSERT_DOUBLE_EQ(expected, result);
+}
+
+TEST(Square_root, test1) {
+    double result = square_root(4);
+    double expected = 2;
+    ASSERT_EQ(expected, result);
+}
+
+TEST(Square_root, test2) {
+    double result = square_root(12);
+    double expected = 3.464102;
+    ASSERT_DOUBLE_EQ(expected, result);
+}
+
+TEST(Square_root, test3) {
+    double result = square_root(1.2);
+    double expected = 1.095445;
+    ASSERT_DOUBLE_EQ(expected, result);
+}
+
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
