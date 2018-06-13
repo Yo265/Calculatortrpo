@@ -51,6 +51,42 @@ TEST(Division, test4) {
     ASSERT_DOUBLE_EQ(expected, result);
 }
 
+TEST(Subtraction, test1) {
+    double result = subtraction(0.48,-0.3);
+    double expected = 0.78;
+    ASSERT_DOUBLE_EQ(expected, result);
+}
+
+TEST(Subtraction, test2) {
+    double result = subtraction(-45,32);
+    double expected = 77;
+    ASSERT_EQ(expected, result);
+}
+
+TEST(Subtraction, test3) {
+    double result = subtraction(55,13);
+    double expected = 42;
+    ASSERT_EQ(expected, result);
+}
+
+TEST(Addition, test1) {
+    double result = addition(0.53,13);
+    double expected = 13.53;
+    ASSERT_DOUBLE_EQ(expected, result);
+}
+
+TEST(Addition, test2) {
+    double result = addition(32,-3);
+    double expected = 29;
+    ASSERT_EQ(expected, result);
+}
+
+TEST(Addition, test3) {
+    double result = addition(-120.1,0);
+    double expected = -120.1;
+    ASSERT_DOUBLE_EQ(expected, result);
+}
+
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
