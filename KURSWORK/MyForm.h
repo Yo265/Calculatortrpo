@@ -153,7 +153,7 @@ namespace KURSWORK {
 			// 
 			this->button2->Font = (gcnew System::Drawing::Font(L"Tahoma", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->button2->Location = System::Drawing::Point(459, 95);
+			this->button2->Location = System::Drawing::Point(548, 142);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(83, 41);
 			this->button2->TabIndex = 3;
@@ -165,7 +165,7 @@ namespace KURSWORK {
 			// 
 			this->button4->Font = (gcnew System::Drawing::Font(L"Tahoma", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->button4->Location = System::Drawing::Point(548, 186);
+			this->button4->Location = System::Drawing::Point(548, 189);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(83, 41);
 			this->button4->TabIndex = 4;
@@ -189,7 +189,7 @@ namespace KURSWORK {
 			// 
 			this->button6->Font = (gcnew System::Drawing::Font(L"Tahoma", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->button6->Location = System::Drawing::Point(459, 142);
+			this->button6->Location = System::Drawing::Point(459, 95);
 			this->button6->Name = L"button6";
 			this->button6->Size = System::Drawing::Size(83, 41);
 			this->button6->TabIndex = 6;
@@ -370,7 +370,7 @@ namespace KURSWORK {
 			// 
 			this->button22->Font = (gcnew System::Drawing::Font(L"Tahoma", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->button22->Location = System::Drawing::Point(459, 186);
+			this->button22->Location = System::Drawing::Point(459, 189);
 			this->button22->Name = L"button22";
 			this->button22->Size = System::Drawing::Size(83, 41);
 			this->button22->TabIndex = 33;
@@ -381,7 +381,7 @@ namespace KURSWORK {
 			// 
 			this->button23->Font = (gcnew System::Drawing::Font(L"Tahoma", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->button23->Location = System::Drawing::Point(548, 280);
+			this->button23->Location = System::Drawing::Point(548, 233);
 			this->button23->Name = L"button23";
 			this->button23->Size = System::Drawing::Size(83, 41);
 			this->button23->TabIndex = 34;
@@ -392,7 +392,7 @@ namespace KURSWORK {
 			// 
 			this->button24->Font = (gcnew System::Drawing::Font(L"Tahoma", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->button24->Location = System::Drawing::Point(548, 142);
+			this->button24->Location = System::Drawing::Point(370, 189);
 			this->button24->Name = L"button24";
 			this->button24->Size = System::Drawing::Size(83, 41);
 			this->button24->TabIndex = 35;
@@ -415,7 +415,7 @@ namespace KURSWORK {
 			// 
 			this->button3->Font = (gcnew System::Drawing::Font(L"Tahoma", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->button3->Location = System::Drawing::Point(548, 233);
+			this->button3->Location = System::Drawing::Point(370, 280);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(83, 41);
 			this->button3->TabIndex = 37;
@@ -449,7 +449,7 @@ namespace KURSWORK {
 			// 
 			this->button27->Font = (gcnew System::Drawing::Font(L"Tahoma", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->button27->Location = System::Drawing::Point(370, 186);
+			this->button27->Location = System::Drawing::Point(459, 142);
 			this->button27->Name = L"button27";
 			this->button27->Size = System::Drawing::Size(83, 41);
 			this->button27->TabIndex = 40;
@@ -607,7 +607,8 @@ private: System::Void Operation(System::Object^ sender, System::EventArgs^  e) {
 			 if (Znak == "+") Result = addition(Number1, Number2);
 			 if (Znak == "-") Result = subtraction(Number1, Number2);
 			 if (Znak == "*") Result = multipl(Number1, Number2);
-			 if (Znak == "/") Result = division(Number1, Number2);
+			 if (Znak == "/") {Result = division(Number1, Number2); if (Number2 == 0) Error = true;
+		 }
 			 if (Znak == "^") Result = power(Number1, Number2);
 			 if (Znak == "%") { Result = percentage(Number1, Number2); if (Number2 < 0) Error = true; }
 			 Znak = nullptr;
