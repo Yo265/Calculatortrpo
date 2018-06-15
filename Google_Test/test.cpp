@@ -57,6 +57,12 @@ TEST(division, test4) {
 	ASSERT_DOUBLE_EQ(expected, result);
 }
 
+TEST(division, test5) {
+	double result = division(94, 3);
+	double expected = 31.333333;
+	ASSERT_NEAR(expected, result, 0.000001);
+}
+
 TEST(subtraction, test1) {
 	double result = subtraction(0.48, -0.3);
 	double expected = 0.78;

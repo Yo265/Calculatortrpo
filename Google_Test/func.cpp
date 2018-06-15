@@ -57,14 +57,14 @@ double percentage(double num1,double num2){
 double sinus(double num){
 	double result,tmp;
 	tmp = (num * pi)/180;
-	result = sin(num);
+	result = sin(tmp);
 	return result;
 }
 
 double cosinus(double num){
 	double result,tmp;
 	tmp = (num * pi)/180;
-	result = cos(num);
+	result = cos(tmp);
 	return result;
 }
 
@@ -74,7 +74,7 @@ double tg(double num){
 		return 7878;
 	else{
 	tmp = (num * pi)/180;
-	result =tan(num);
+	result =tan(tmp);
 	return result;
 	}
 }
@@ -84,7 +84,7 @@ double ctg(double num){
 		if((num == 0) || (num == 180) || (num == 360))
 		return 787890;
 	tmp = (num * pi)/180;
-	result = 1/tan(num);
+	result = 1/tan(tmp);
 	return result;
 }
 
