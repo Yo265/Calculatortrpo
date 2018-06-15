@@ -460,7 +460,7 @@ namespace KURSWORK {
 			this->button27->Name = L"button27";
 			this->button27->Size = System::Drawing::Size(83, 41);
 			this->button27->TabIndex = 40;
-			this->button27->Text = L"^e";
+			this->button27->Text = L"e^";
 			this->button27->UseVisualStyleBackColor = true;
 			this->button27->Click += gcnew System::EventHandler(this, &MyForm::button27_Click);
 			// 
@@ -630,7 +630,7 @@ private: System::Void Operation(System::Object^ sender, System::EventArgs^  e) {
 		}
 		if (Znak == "log"){Result = lg(Number1); if (Number1 <= 0) Error = true;
 	}
-		if (Znak == "^e") Result = epow(Number1);
+		if (Znak == "e^") Result = epow(Number1);
 		Znak = nullptr;
 		// ќтображаем Result в текстовом поле:
 		if (Error) { maskedTextBox1->Text = ""; maskedTextBox1->Text = maskedTextBox1->Text + "¬ведены неверные значени€!"; StartOfInput = true;}
