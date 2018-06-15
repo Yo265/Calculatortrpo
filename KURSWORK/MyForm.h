@@ -520,7 +520,7 @@ namespace KURSWORK {
 		button14->Click += gcnew EventHandler(this, &MyForm::AddDigit);
 		button13->Click += gcnew EventHandler(this, &MyForm::AddDigit);
 		button20->Click += gcnew EventHandler(this, &MyForm::AddDigit);
-		button7->Click += gcnew EventHandler(this, &MyForm::AddDigit);
+		button7->Click += gcnew EventHandler(this, &MyForm::AddDigit1); //запятая отдельно, т.к она должна вводиться лишь 1 раз за число
 		button11->Click += gcnew EventHandler(this, &MyForm::AddDigit);
 		//Для операций с 2 операндами
 		button1->Click += gcnew EventHandler(this, &MyForm::Operation);
@@ -544,7 +544,7 @@ namespace KURSWORK {
 		//Отдельный "ClearMe"
 		button9->Click += gcnew EventHandler(this, &MyForm::ClearMe);
 	}
-
+			 bool c = true;
 private: System::Void AddDigit(System::Object^ sender, System::EventArgs^ e) {
 			 // Получить текст, отображаемый на кнопке
 			 Button^ MyButton = (Button^)sender;
@@ -552,6 +552,7 @@ private: System::Void AddDigit(System::Object^ sender, System::EventArgs^ e) {
 			 if (StartOfInput == true) {  // Ввод первой цифры числа:
 				 maskedTextBox1->Text = Digit;
 				 StartOfInput = false;
+				 c = true;
 				 return;
 			 }
 			 // Иначе "сцепляем" полученные цифры в новое число:
@@ -636,7 +637,6 @@ private: System::Void button4_Click(System::Object^  sender, System::EventArgs^ 
 private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e) {
 }
 private: System::Void button7_Click(System::Object^  sender, System::EventArgs^  e) {
-	maskedTextBox1->Text = maskedTextBox1->Text + ",";
 }
 private: System::Void button10_Click(System::Object^  sender, System::EventArgs^  e) {
 }
@@ -694,5 +694,16 @@ private: System::Void maskedTextBox1_KeyPress(System::Object^  sender, System::W
 		Key->Handled = true;
 	}
 }
+
+	private: System::Void AddDigit1(System::Object^ sender, System::EventArgs^ e) {
+		// Получить текст, отображаемый на кнопке
+		
+		if (c) {
+			Button^ MyButton = (Button^)sender;
+			String^ Digit = MyButton->Text;
+			maskedTextBox1->Text = maskedTextBox1->Text+Digit;
+			c = false;
+		}
+	}
 };
 }
