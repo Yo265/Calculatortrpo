@@ -135,6 +135,7 @@ namespace KURSWORK {
 			this->maskedTextBox1->Size = System::Drawing::Size(502, 35);
 			this->maskedTextBox1->TabIndex = 1;
 			this->maskedTextBox1->MaskInputRejected += gcnew System::Windows::Forms::MaskInputRejectedEventHandler(this, &MyForm::maskedTextBox1_MaskInputRejected);
+			this->maskedTextBox1->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &MyForm::maskedTextBox1_KeyPress);
 			// 
 			// button1
 			// 
@@ -567,21 +568,32 @@ private: System::Void Operation(System::Object^ sender, System::EventArgs^  e) {
 	private: System::Void Operation1(System::Object^ sender, System::EventArgs^  e) {
 		Number1 = Double::Parse(maskedTextBox1->Text);
 		// Получить текст, отображаемый на кнопке можно таким образом:
+		bool Error=false;
 		Button^ MyButton = (Button^)sender;
 		Znak = MyButton->Text;
 		double Result = 0;
-		if (Znak == "sin") Result=sinus(Number1);
+		if (Znak == "sin") Result = sinus(Number1);
 		if (Znak == "cos") Result = cosinus(Number1);
-		if (Znak == "tan") Result = tg(Number1);
-		if (Znak == "ctan")Result = ctg(Number1);
+		if (Znak == "tan") {
+			Result = tg(Number1); if (Number1 == 90 || Number1 == 180) Error=true;
+		}
+		if (Znak == "ctan") {
+			Result = ctg(Number1); if (Number1 == 180) Error = true;
+		}
 		if (Znak == "!")   Result = factorial(Number1);
-		if (Znak == "sqrt")Result = square_root(Number1);
-		if (Znak == "log")Result = lg(Number1);
+		if (Znak == "sqrt") {
+			Result = square_root(Number1); if (Number1 < 0) Error = true;
+		}
+		if (Znak == "log"){Result = lg(Number1); if (Number1 <= 0) Error = true;
+	}
 		if (Znak == "^e") Result = epow(Number1);
 		Znak = nullptr;
 		// Отображаем Result в текстовом поле:
-		maskedTextBox1->Text = Result.ToString();
-		Number1 = Result; StartOfInput = true;
+		if (Error) { maskedTextBox1->Text = ""; maskedTextBox1->Text = maskedTextBox1->Text + "Введены неверные значения"; }
+		else {
+			maskedTextBox1->Text = Result.ToString();
+			Number1 = Result; StartOfInput = true;
+		}
 	}
 
 	private: System::Void maskedTextBox1_MaskInputRejected(System::Object^  sender, System::Windows::Forms::MaskInputRejectedEventArgs^  e) {
@@ -589,6 +601,7 @@ private: System::Void Operation(System::Object^ sender, System::EventArgs^  e) {
 
 		 private: System::Void IsEqual(System::Object^ sender, System::EventArgs^ e) {
 			 // Обработка нажатия клавиши "IsEqual"
+			 bool Error = false;
 			 double Result = 0;
 			 Number2 = Double::Parse(maskedTextBox1->Text);
 			 if (Znak == "+") Result = addition(Number1, Number2);
@@ -596,11 +609,14 @@ private: System::Void Operation(System::Object^ sender, System::EventArgs^  e) {
 			 if (Znak == "*") Result = multipl(Number1, Number2);
 			 if (Znak == "/") Result = division(Number1, Number2);
 			 if (Znak == "^") Result = power(Number1, Number2);
-			 if (Znak == "%") Result = percentage(Number1, Number2);
+			 if (Znak == "%") { Result = percentage(Number1, Number2); if (Number2 < 0) Error = true; }
 			 Znak = nullptr;
 			 // Отображаем Result в текстовом поле:
-			 maskedTextBox1->Text = Result.ToString();
-			 Number1 = Result; StartOfInput = true;
+			 if (Error) { maskedTextBox1->Text = ""; maskedTextBox1->Text = maskedTextBox1->Text + "Введены неверные значения"; }
+			 else {
+				 maskedTextBox1->Text = Result.ToString();
+				 Number1 = Result; StartOfInput = true;
+			 }
 		 }
 
 private: System::Void ClearMe(System::Object^ sender, System::EventArgs^ e) {
@@ -659,12 +675,23 @@ private: System::Void button25_Click(System::Object^  sender, System::EventArgs^
 }
 private: System::Void button17_Click(System::Object^  sender, System::EventArgs^  e) {
 }
-\
+
 private: System::Void button3_Click_1(System::Object^  sender, System::EventArgs^  e) {
 }
 private: System::Void button24_Click_1(System::Object^  sender, System::EventArgs^  e) {
 }
 private: System::Void button27_Click(System::Object^  sender, System::EventArgs^  e) {
+}
+private: System::Void maskedTextBox1_KeyPress(System::Object^  sender, System::Windows::Forms::KeyPressEventArgs^  Key) {
+	if ((maskedTextBox1->Text->Length != 0) && (Key->KeyChar == '-')) {
+		Key->Handled = true;
+		return;
+	}
+
+	if (!((Key->KeyChar >= '0') && (Key->KeyChar <= '9') ||
+		(Key->KeyChar == ',') || (Key->KeyChar == '-')|| (Key->KeyChar == 8))) {
+		Key->Handled = true;
+	}
 }
 };
 }
