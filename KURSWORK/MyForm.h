@@ -5,6 +5,7 @@
 #include <conio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <math.h>
 
 
 namespace KURSWORK {
@@ -609,7 +610,7 @@ private: System::Void Operation(System::Object^ sender, System::EventArgs^  e) {
 	private: System::Void Operation1(System::Object^ sender, System::EventArgs^  e) {
 		Number1 = Double::Parse(maskedTextBox1->Text);
 		// Получить текст, отображаемый на кнопке можно таким образом:
-		bool Error=false;
+		bool Error=false; //Ошибка
 		Button^ MyButton = (Button^)sender;
 		Znak = MyButton->Text;
 		double Result = 0;
@@ -621,7 +622,9 @@ private: System::Void Operation(System::Object^ sender, System::EventArgs^  e) {
 		if (Znak == "ctan") {
 			Result = ctg(Number1); if (Number1 == 180) Error = true;
 		}
-		if (Znak == "!")   Result = factorial(Number1);
+		if (Znak == "!") {
+			Result = factorial(Number1); if ((floor(Number1) != Number1) || (Number1 < 0)) Error = true;
+		}
 		if (Znak == "sqrt") {
 			Result = square_root(Number1); if (Number1 < 0) Error = true;
 		}
@@ -630,7 +633,7 @@ private: System::Void Operation(System::Object^ sender, System::EventArgs^  e) {
 		if (Znak == "^e") Result = epow(Number1);
 		Znak = nullptr;
 		// Отображаем Result в текстовом поле:
-		if (Error) { maskedTextBox1->Text = ""; maskedTextBox1->Text = maskedTextBox1->Text + "Введены неверные значения"; }
+		if (Error) { maskedTextBox1->Text = ""; maskedTextBox1->Text = maskedTextBox1->Text + "Введены неверные значения!"; StartOfInput = true;}
 		else {
 			maskedTextBox1->Text = Result.ToString();
 			Number1 = Result; StartOfInput = true;
@@ -650,18 +653,19 @@ private: System::Void Operation(System::Object^ sender, System::EventArgs^  e) {
 			 if (Znak == "*") Result = multipl(Number1, Number2);
 			 if (Znak == "/") {Result = division(Number1, Number2); if (Number2 == 0) Error = true;
 		 }
-			 if (Znak == "^") Result = power(Number1, Number2);
+			 if (Znak == "^") { Result = power(Number1, Number2); if ((floor(Number2) != Number2)) Error = true; }
 			 if (Znak == "%") { Result = percentage(Number1, Number2); if (Number2 < 0) Error = true; }
-			 
-			 switch (fire)
-			 {
-			 case 3: {maskedTextBox3->Text = ""; fire = 0; }
-			 case 0: {maskedTextBox3->Text = maskedTextBox3->Text + Number1 + Znak + Number2 + "=" + Result; fire++; break;
-			 }
-			 case 1: {maskedTextBox2->Text = ""; maskedTextBox2->Text = maskedTextBox2->Text + Number1 + Znak + Number2 + "=" + Result; fire++; break; }
-			 case 2: { maskedTextBox4->Text = ""; maskedTextBox4->Text = maskedTextBox4->Text + Number1 + Znak + Number2 + "=" + Result; fire++; break; }
-			 default:
-				 break;
+			 if (Error == false) {
+				 switch (fire)
+				 {
+				 case 3: {maskedTextBox3->Text = ""; fire = 0; }
+				 case 0: {maskedTextBox3->Text = maskedTextBox3->Text + Number1 + Znak + Number2 + "=" + Result; fire++; break;
+				 }
+				 case 1: {maskedTextBox2->Text = ""; maskedTextBox2->Text = maskedTextBox2->Text + Number1 + Znak + Number2 + "=" + Result; fire++; break; }
+				 case 2: { maskedTextBox4->Text = ""; maskedTextBox4->Text = maskedTextBox4->Text + Number1 + Znak + Number2 + "=" + Result; fire++; break; }
+				 default:
+					 break;
+				 }
 			 }
 
 
@@ -670,7 +674,7 @@ private: System::Void Operation(System::Object^ sender, System::EventArgs^  e) {
 
 			 Znak = nullptr;
 			 // Отображаем Result в текстовом поле:
-			 if (Error) { maskedTextBox1->Text = ""; maskedTextBox1->Text = maskedTextBox1->Text + "Введены неверные значения"; }
+			 if (Error) { maskedTextBox1->Text = ""; maskedTextBox1->Text = maskedTextBox1->Text + "Введены неверные значения!"; StartOfInput = true;}
 			 else {
 				 maskedTextBox1->Text = Result.ToString();
 				 Number1 = Result; StartOfInput = true;
