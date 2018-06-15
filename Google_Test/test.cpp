@@ -65,7 +65,7 @@ TEST(subtraction, test1) {
 
 TEST(subtraction, test2) {
 	double result = subtraction(-45, 32);
-	double expected = 77;
+	double expected = -77;
 	ASSERT_EQ(expected, result);
 }
 
@@ -105,12 +105,6 @@ TEST(factorial, test2) {
 	ASSERT_EQ(expected, result);
 }
 
-TEST(factorial, test3) {
-	double result = factorial(5.5);
-	double expected = 287.885278;
-	ASSERT_DOUBLE_EQ(expected, result);
-}
-
 TEST(percentage, test1) {
 	double result = percentage(120, 13);
 	double expected = 15.6;
@@ -132,61 +126,61 @@ TEST(sinus, test1) {
 TEST(sinus, test2) {
 	double result = sinus(315);
 	double expected = -0.707107;
-	ASSERT_DOUBLE_EQ(expected, result);
+	ASSERT_NEAR(expected, result, 0.000001);
 }
 
 TEST(sinus, test3) {
 	double result = sinus(-610);
 	double expected = 0.939693;
-	ASSERT_DOUBLE_EQ(expected, result);
+	ASSERT_NEAR(expected, result, 0.000001);
 }
 
 TEST(cosinus, test1) {
 	double result = cosinus(60);
 	double expected = 0.5;
-	ASSERT_DOUBLE_EQ(expected, result);
+	ASSERT_NEAR(expected, result, 0.000001);
 }
 
 TEST(cosinus, test2) {
 	double result = cosinus(410);
 	double expected = 0.642788;
-	ASSERT_DOUBLE_EQ(expected, result);
+	ASSERT_NEAR(expected, result, 0.000001);
 }
 
 TEST(cosinus, test3) {
 	double result = cosinus(-55);
 	double expected = 0.573576;
-	ASSERT_DOUBLE_EQ(expected, result);
+	ASSERT_NEAR(expected, result, 0.000001);
 }
 
 TEST(tg, test1) {
 	double result = tg(13);
 	double expected = 0.230868;
-	ASSERT_DOUBLE_EQ(expected, result);
+	ASSERT_NEAR(expected, result, 0.000001);
 }
 
 TEST(tg, test2) {
 	double result = tg(0);
 	double expected = 0;
-	ASSERT_DOUBLE_EQ(expected, result);
+	ASSERT_NEAR(expected, result, 0.000001);
 }
 
 TEST(tg, test3) {
 	double result = tg(-33);
 	double expected = -0.649408;
-	ASSERT_DOUBLE_EQ(expected, result);
+	ASSERT_NEAR(expected, result, 0.000001);
 }
 
 TEST(ctg, test1) {
 	double result = ctg(80);
 	double expected = 0.176327;
-	ASSERT_DOUBLE_EQ(expected, result);
+	ASSERT_NEAR(expected, result, 0.000001);
 }
 
 TEST(ctg, test2) {
 	double result = ctg(-519);
 	double expected = 2.605089;
-	ASSERT_DOUBLE_EQ(expected, result);
+	ASSERT_NEAR(expected, result, 0.000001);
 }
 
 TEST(power, test1) {
@@ -215,14 +209,14 @@ TEST(square_root, test1) {
 
 TEST(square_root, test2) {
 	double result = square_root(12);
-	double expected = 3.464102;
-	ASSERT_DOUBLE_EQ(expected, result);
+	double expected = 3.464101;
+	ASSERT_NEAR(expected, result, 0.000001);
 }
 
 TEST(square_root, test3) {
 	double result = square_root(1.2);
 	double expected = 1.095445;
-	ASSERT_DOUBLE_EQ(expected, result);
+	ASSERT_NEAR(expected, result, 0.000001);
 }
 
 TEST(epow, test1) {
@@ -234,26 +228,26 @@ TEST(epow, test1) {
 TEST(epow, test2) {
 	double result = epow(-5);
 	double expected = 0.006738;
-	ASSERT_DOUBLE_EQ(expected, result);
+	ASSERT_NEAR(expected, result, 0.000001);
 }
 
 TEST(epow, test3) {
 	double result = epow(4);
 	double expected = 54.598150;
-	ASSERT_DOUBLE_EQ(expected, result);
+	ASSERT_NEAR(expected, result, 0.000001);
 }
 
 TEST(epow, test4) {
 	double result = epow(5.1);
 	double expected = 164.021907;
-	ASSERT_DOUBLE_EQ(expected, result);
+	ASSERT_NEAR(expected, result, 0.000001);
 }
 
 
 TEST(lg, test1) {
 	double result = lg(55);
-	double expected = 1.740363;
-	ASSERT_DOUBLE_EQ(expected, result);
+	double expected = 4,007333;
+	ASSERT_NEAR(expected, result, 0.000001);
 }
 
 TEST(lg, test2) {
