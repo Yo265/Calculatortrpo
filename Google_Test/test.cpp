@@ -246,7 +246,7 @@ TEST(epow, test4) {
 
 TEST(lg, test1) {
 	double result = lg(55);
-	double expected = 4,007333;
+	double expected = 4.007333;
 	ASSERT_NEAR(expected, result, 0.000001);
 }
 
