@@ -119,25 +119,25 @@ double square_root(double num1){
 }
 
 double epow(double num){
-	double result = e;
+	double result = 1;
 	if (num == 0){
-		result = 0;
+		result = 1;
 		return result;
 	}else if(num == 1){
 		result = e;
 		return result;
 	}else if(num == -1){
-		result = 1/num;
+		result = 1/e;
 		return result;
 	}else if(num >= 2){
-		for(int i = 2;i <= num;i++)
-			result *= num;
+		for(int i = 1;i <= num;i++)
+			result *= e;
 		return result;
 	}else if(num <= -2){
 		double n = num;
 		n *= -1;
-		for(int i = 2;i <= n;i++)
-			result *= num;
+		for(int i = 1;i <= n;i++)
+			result *= e;
 		result = 1/result;
 		return result;
 	}
