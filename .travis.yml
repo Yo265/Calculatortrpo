@@ -1,0 +1,6 @@
+oc: windows
+
+language: cpp
+
+compiler: g++
+ 

@@ -1,0 +1,8 @@
+﻿  pch.cpp
+  func.cpp
+  test.cpp
+test.cpp(4): fatal error C1083: Не удается открыть файл включение: func.h: No such file or directory,
+  Создание кода...
+c:\users\user\desktop\новая папка (5)\новая папка (3)\google_test\func.cpp(16): warning C4700: использована неинициализированная локальная переменная "result"
+c:\users\user\desktop\новая папка (5)\новая папка (3)\google_test\func.cpp(114): warning C4715: power: значение возвращается не при всех путях выполнения
+c:\users\user\desktop\новая папка (5)\новая папка (3)\google_test\func.cpp(145): warning C4715: epow: значение возвращается не при всех путях выполнения
