@@ -243,13 +243,6 @@ TEST(epow, test3) {
 	ASSERT_NEAR(expected, result, 0.000001);
 }
 
-TEST(epow, test4) {
-	double result = epow(5.1);
-	double expected = 164.021907;
-	ASSERT_NEAR(expected, result, 0.000001);
-}
-
-
 TEST(lg, test1) {
 	double result = lg(55);
 	double expected = 4.007333;
