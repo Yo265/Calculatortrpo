@@ -570,13 +570,13 @@ namespace KURSWORK {
 		button6->Click += gcnew EventHandler(this, &MyForm::Operation);
 		button25->Click += gcnew EventHandler(this, &MyForm::Operation);
 		button24->Click += gcnew EventHandler(this, &MyForm::Operation);
-		
+
 		//Для операций с 1 операндом
 		button23->Click += gcnew EventHandler(this, &MyForm::Operation1);
 		button17->Click += gcnew EventHandler(this, &MyForm::Operation1);
 		button26->Click += gcnew EventHandler(this, &MyForm::Operation1);
 		button22->Click += gcnew EventHandler(this, &MyForm::Operation1);
-		button3->Click += gcnew EventHandler(this, &MyForm::Operation1); 
+		button3->Click += gcnew EventHandler(this, &MyForm::Operation1);
 		button8->Click += gcnew EventHandler(this, &MyForm::Operation1);
 		button4->Click += gcnew EventHandler(this, &MyForm::Operation1);
 		button27->Click += gcnew EventHandler(this, &MyForm::Operation1);
@@ -586,36 +586,36 @@ namespace KURSWORK {
 		button9->Click += gcnew EventHandler(this, &MyForm::ClearMe);
 	}
 			 bool c = true;
-private: System::Void AddDigit(System::Object^ sender, System::EventArgs^ e) {
-			 // Получить текст, отображаемый на кнопке
-			 Button^ MyButton = (Button^)sender;
-			 String^ Digit = MyButton->Text;
-			 if (StartOfInput == true) {  // Ввод первой цифры числа:
-				 maskedTextBox1->Text = Digit;
-				 StartOfInput = false;
-				 c = true;
-				 return;
-			 }
-			 // Иначе "сцепляем" полученные цифры в новое число:
-			 if (StartOfInput == false)  maskedTextBox1->Text = maskedTextBox1->Text + Digit;
-		 }
-private: System::Void Operation(System::Object^ sender, System::EventArgs^  e) {
-			Number1 = Double::Parse(maskedTextBox1->Text);
-			// Получить текст, отображаемый на кнопке можно таким образом:
-			Button^ MyButton = (Button^)sender;
-			Znak = MyButton->Text;
-			StartOfInput = true; // ожидаем ввод нового числа
+	private: System::Void AddDigit(System::Object^ sender, System::EventArgs^ e) {
+		// Получить текст, отображаемый на кнопке
+		Button^ MyButton = (Button^)sender;
+		String^ Digit = MyButton->Text;
+		if (StartOfInput == true) {  // Ввод первой цифры числа:
+			maskedTextBox1->Text = Digit;
+			StartOfInput = false;
+			c = true;
+			return;
 		}
+		// Иначе "сцепляем" полученные цифры в новое число:
+		if (StartOfInput == false)  maskedTextBox1->Text = maskedTextBox1->Text + Digit;
+	}
+	private: System::Void Operation(System::Object^ sender, System::EventArgs^  e) {
+		Number1 = Double::Parse(maskedTextBox1->Text);
+		// Получить текст, отображаемый на кнопке можно таким образом:
+		Button^ MyButton = (Button^)sender;
+		Znak = MyButton->Text;
+		StartOfInput = true; // ожидаем ввод нового числа
+	}
 
 	private: System::Void Operation1(System::Object^ sender, System::EventArgs^  e) {
 		Number1 = Double::Parse(maskedTextBox1->Text);
 		// Получить текст, отображаемый на кнопке можно таким образом:
-		bool Error=false; //Ошибка
+		bool Error = false; //Ошибка
 		Button^ MyButton = (Button^)sender;
 		Znak = MyButton->Text;
 		double Result = 0;
 		if (Znak == "sin") Result = sinus(Number1);
-		if (Znak == "cos") Result = cosinus(Number1);
+			 if (Znak == "cos") Result = cosinus(Number1);
 		if (Znak == "tan") {
 			Result = tg(Number1); if (Number1 == 90 || Number1 == 180) Error=true;
 		}
@@ -630,7 +630,7 @@ private: System::Void Operation(System::Object^ sender, System::EventArgs^  e) {
 		}
 		if (Znak == "log"){Result = lg(Number1); if (Number1 <= 0) Error = true;
 	}
-		if (Znak == "e^") Result = epow(Number1);
+		if (Znak == "e^") { Result = epow(Number1); if (floor(Number1) != Number1) Error = true; }
 		Znak = nullptr;
 		// Отображаем Result в текстовом поле:
 		if (Error) { maskedTextBox1->Text = ""; maskedTextBox1->Text = maskedTextBox1->Text + "Введены неверные значения!"; StartOfInput = true;}

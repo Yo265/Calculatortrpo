@@ -1,8 +1,1 @@
-﻿  pch.cpp
-  test.cpp
-  func.cpp
-  Создание кода...
-c:\users\user\desktop\новая папка (5)\новая папка (3)\новая папка\calculatortrpo\google_test\func.cpp(16): warning C4700: использована неинициализированная локальная переменная "result"
-c:\users\user\desktop\новая папка (5)\новая папка (3)\новая папка\calculatortrpo\google_test\func.cpp(114): warning C4715: power: значение возвращается не при всех путях выполнения
-c:\users\user\desktop\новая папка (5)\новая папка (3)\новая папка\calculatortrpo\google_test\func.cpp(145): warning C4715: epow: значение возвращается не при всех путях выполнения
-  Google_Test.vcxproj -> C:\Users\User\Desktop\Новая папка (5)\Новая папка (3)\Новая папка\Calculatortrpo\x64\Debug\Google_Test.exe
+﻿  Google_Test.vcxproj -> C:\Users\User\Documents\TRPO\kurs work\Новая папка\Calculatortrpo\x64\Debug\Google_Test.exe
